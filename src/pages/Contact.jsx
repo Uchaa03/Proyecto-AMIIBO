@@ -5,8 +5,8 @@ const Contact = () => {
 
     const [email, setEmail] = useState("")
     const [request, setRequest] = useState("")
-    const [inputName, setInputName] = useState("")
-    const [errorMessage, setErrorMessage] = useState(null)
+    const [errorEmail, setErrorEmail] = useState(null)
+    const [errorRequest, setErrorRequest] = useState(null)
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -14,21 +14,17 @@ const Contact = () => {
 
         setEmail("")
         setRequest("")
-        setInputName("")
-        setErrorMessage(null)
+        setErrorEmail(null)
+        setErrorRequest(null)
     }
 
     const handleBlur = e => {
-        console.log(e.target.name)
-        const  error = ValidateFormsHook(e.target.value, e.target.name) //Values for show errors
-        console.log(error)
-        //Set inputName and error if return anything
-        setInputName(e.target.name)
-        setErrorMessage(error)
         if (e.target.name === "email") {
+            setErrorEmail(ValidateFormsHook(e.target.value, e.target.name)) //Values for show errors)
             setEmail(e.target.value)
         }
         if (e.target.name === "request") {
+            setErrorRequest(ValidateFormsHook(e.target.value, e.target.name))
             setRequest(e.target.value)
         }
     }
@@ -43,7 +39,7 @@ const Contact = () => {
         }
     }
 
-    const formValid = !(email && request && !errorMessage) //Boolean
+    const formValid = !(email && request && !errorEmail && !errorRequest) //Boolean
 
     return (
         <>
@@ -61,9 +57,8 @@ const Contact = () => {
                         onChange={handleChange}
                     />
                     { //If email is incorrect show error
-                        errorMessage !== null && inputName === "email"?
-                            (<p>{errorMessage}</p>):
-                            ''
+                        errorEmail !== null?
+                            (<p>{errorEmail}</p>): ''
                     }
                     <textarea
                         name="request"
@@ -73,9 +68,8 @@ const Contact = () => {
                         onChange={handleChange}
                     />
                     { //If request is incorrect show error
-                        errorMessage !== null && inputName === "request"?
-                            (<p>{errorMessage}</p>):
-                            ''
+                        errorRequest !== null?
+                            (<p>{errorRequest}</p>):''
                     }
                     <button type="submit" disabled={formValid}>Enviar</button>
                 </form>
