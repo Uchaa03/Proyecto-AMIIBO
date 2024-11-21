@@ -1,14 +1,14 @@
 import {createBrowserRouter} from "react-router-dom";
 import LayoutRoot from "../layout/LayoutRoot.jsx";
-import Inicio from "../pages/Inicio.jsx";
-import Figuras from "../pages/Figuras.jsx";
-import Accesorios from "../pages/Accesorios.jsx";
-import Contacto from "../pages/Contacto.jsx";
+import Home from "../pages/Home.jsx";
+import Figures from "../pages/Figures.jsx";
+import Accesories from "../pages/Accesories.jsx";
+import Contact from "../pages/Contact.jsx";
 import LayoutPrivate from "../layout/LayoutPrivate.jsx";
-import Favoritos from "../pages/Favoritos.jsx";
+import Favorites from "../pages/Favorites.jsx";
 import LayoutModal from "../layout/LayoutModal.jsx";
-import InicioSesion from "../pages/InicioSesion.jsx";
-import Registro from "../pages/Registro.jsx";
+import LogIn from "../pages/LogIn.jsx";
+import SingUp from "../pages/SingUp.jsx";
 
 
 export const Router = createBrowserRouter([ //For create navar route
@@ -18,19 +18,19 @@ export const Router = createBrowserRouter([ //For create navar route
         children: [
             {
                 index: true,
-                element: <Inicio/>
+                element: <Home/>
             },
             {
                 path: "/figuras",
-                element: <Figuras/>
+                element: <Figures/>
             },
             {
                 path: "/accesorios",
-                element: <Accesorios/>
+                element: <Accesories/>
             },
             {
                 path: "/contacto",
-                element: <Contacto/>
+                element: <Contact/>
             },
             {
                 path: "/iniciosesion",
@@ -38,11 +38,11 @@ export const Router = createBrowserRouter([ //For create navar route
                 children: [
                     {
                         index: true,
-                        element: <InicioSesion/>
+                        element: <LogIn/>
                     },
                     {
                         path: "registro",
-                        element: <Registro/>
+                        element: <SingUp/>
                     },
                 ]
             },
@@ -52,7 +52,7 @@ export const Router = createBrowserRouter([ //For create navar route
                 children: [
                     {
                         index: true,
-                        element: <Favoritos/>
+                        element: <Favorites/>
                     }
                 ]
             },

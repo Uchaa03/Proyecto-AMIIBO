@@ -1,16 +1,19 @@
-import React from 'react'
-import {NavLink, useNavigate} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
-export const Navbar = () => {
+const Navbar = () => {
 
-    return (
+    return ( //Navbar to navigate in outlet.
         <header>
+            <img src="" alt="AmiiboAPI Logo"/>
             <nav>
-                <NavLink to={}></NavLink>
-                <NavLink to={}></NavLink>
-                <NavLink to={}></NavLink>
-                <NavLink to={}></NavLink>
+                <NavLink to="/">Inicio</NavLink>
+                <NavLink to="/figuras">Figuras</NavLink>
+                <NavLink to="/accesorios">Accesorios</NavLink>
+                <NavLink to="/contacto">Contacto</NavLink>
             </nav>
+            <button>Acceso</button>
         </header>
     )
 }
+
+export default Navbar

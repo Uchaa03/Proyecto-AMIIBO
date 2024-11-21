@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
-import {Navbar} from "../components/Navbar.jsx";
+import Navbar from "../components/Navbar.jsx";
 
 const LayoutRoot = () => {
-    return (
+    return ( //Navbar for navigation and outlet for change pages with layout.
         <>
             <Navbar/>
             <Outlet/>

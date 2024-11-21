@@ -9,7 +9,7 @@ detallada las secciones propuesta para dicha aplicación:
 
 - Una página de inicio básica en la que podemos ver una descripción sobre la página para hacerla usable y fácil de 
 entender a la hora de acceder, en la que tenemos diferentes botones y enlaces que nos llevan a la página del contenido 
-de la API y al Acceso/Registro de la aplicación.
+de la API y al Acceso/SingUp de la aplicación.
 
 - Tenemos una sección de figuras en la que podemos ver todos los
 AMIIBO que ha sacado Nintendo hasta la fecha en el que si nos
