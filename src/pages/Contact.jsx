@@ -10,8 +10,9 @@ const Contact = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        console.log("Mensaje de contacto enviado") //In diw create a toast for send message
+        console.log("Mensaje de contacto enviado") //In DIW, create a toast for send message
 
+        //Reset useState values
         setEmail("")
         setRequest("")
         setErrorEmail(null)
@@ -19,13 +20,14 @@ const Contact = () => {
     }
 
     const handleBlur = e => {
-        if (e.target.name === "email") {
-            setErrorEmail(ValidateFormsHook(e.target.value, e.target.name)) //Values for show errors)
-            setEmail(e.target.value)
+        const {value , name} = e.target //Destructuring event.target
+        if (name === "email") {
+            setErrorEmail(ValidateFormsHook(value, name)) //Values for show errors)
+            setEmail(value)
         }
-        if (e.target.name === "request") {
-            setErrorRequest(ValidateFormsHook(e.target.value, e.target.name))
-            setRequest(e.target.value)
+        if (name === "request") {
+            setErrorRequest(ValidateFormsHook(value, name))
+            setRequest(value)
         }
     }
 
@@ -34,12 +36,13 @@ const Contact = () => {
         const { name, value } = e.target
         if (name === "email") {
             setEmail(value)
-        } else if (name === "request") {
+        }
+        if (name === "request") {
             setRequest(value)
         }
     }
 
-    const formValid = !(email && request && !errorEmail && !errorRequest) //Boolean
+    const formValid = !(email && request && !errorEmail && !errorRequest) //Boolean for disable button
 
     return (
         <>
