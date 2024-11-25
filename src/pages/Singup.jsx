@@ -1,7 +1,7 @@
 
-const SingUp = () => {
+const Singup = () => {
     return (
         <div>Registro</div>
     )
 }
-export default SingUp
+export default Singup

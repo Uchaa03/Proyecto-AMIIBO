@@ -9,7 +9,7 @@ detallada las secciones propuesta para dicha aplicación:
 
 - Una página de inicio básica en la que podemos ver una descripción sobre la página para hacerla usable y fácil de 
 entender a la hora de acceder, en la que tenemos diferentes botones y enlaces que nos llevan a la página del contenido 
-de la API y al Acceso/SingUp de la aplicación.
+de la API y al Acceso/Singup de la aplicación.
 
 - Tenemos una sección de figuras en la que podemos ver todos los
 AMIIBO que ha sacado Nintendo hasta la fecha en el que si nos
@@ -69,8 +69,8 @@ accione desde cualquier página de la web.
       - **Favorites.jsx**: Página de favoritos en el que almacenamos nuestas figuras y accesorios
       - **Figures.jsx**: Página de figuras que utiliza la API
       - **Home.jsx**: Componente de página de Incio
-      - **LogIn.jsx**: Componente de Incio de Sesión
-      - **SingUp.jsx**: Componente de Registo
+      - **Login.jsx**: Componente de Incio de Sesión
+      - **Singup.jsx**: Componente de Registo
     - **router/**: Componentes con los que se crean el enrutamiento.
       - **router.jsx**: Componente donde se genera el enrutamiento.
     - **main.jsx**: Componente donde se carga y renderiza la app.

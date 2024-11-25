@@ -1,6 +1,7 @@
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 
 const Navbar = () => {
+    const navigate = useNavigate();
 
     return ( //Navbar to navigate in outlet.
         <header className="header">
@@ -11,7 +12,7 @@ const Navbar = () => {
                 <NavLink className="nav__link" to="/accesorios">Accesorios</NavLink>
                 <NavLink className="nav__link" to="/contacto">Contacto</NavLink>
             </nav>
-            <button className="header_button">Acceso</button>
+            <button className="header_button" onClick={() => navigate("/iniciosesion")}>Acceso</button>
         </header>
     )
 }

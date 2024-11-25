@@ -7,8 +7,8 @@ import Contact from "../pages/Contact.jsx";
 import LayoutPrivate from "../layout/LayoutPrivate.jsx";
 import Favorites from "../pages/Favorites.jsx";
 import LayoutModal from "../layout/LayoutModal.jsx";
-import LogIn from "../pages/LogIn.jsx";
-import SingUp from "../pages/SingUp.jsx";
+import Login from "../pages/Login.jsx";
+import Singup from "../pages/Singup.jsx";
 
 
 export const Router = createBrowserRouter([ //For create navar route
@@ -38,11 +38,11 @@ export const Router = createBrowserRouter([ //For create navar route
                 children: [
                     {
                         index: true,
-                        element: <LogIn/>
+                        element: <Login/>
                     },
                     {
                         path: "registro",
-                        element: <SingUp/>
+                        element: <Singup/>
                     },
                 ]
             },

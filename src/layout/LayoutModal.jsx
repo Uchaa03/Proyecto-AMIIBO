@@ -1,8 +1,10 @@
-import React from 'react'
+import {Outlet} from "react-router-dom";
 
 const LayoutModal = () => {
     return (
-        <div>LayoutModal</div>
+        <>
+            <Outlet/>
+        </>
     )
 }
 export default LayoutModal

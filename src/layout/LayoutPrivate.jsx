@@ -1,8 +1,12 @@
-import React from 'react'
+import Navbar from "../components/Navbar.jsx";
+import {Outlet} from "react-router-dom";
 
 const LayoutPrivate = () => {
     return (
-        <div>LayoutPrivate</div>
+        <>
+            <Navbar/>
+            <Outlet/>
+        </>
     )
 }
 export default LayoutPrivate
