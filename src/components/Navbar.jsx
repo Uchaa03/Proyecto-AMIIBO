@@ -3,15 +3,15 @@ import {NavLink} from "react-router-dom";
 const Navbar = () => {
 
     return ( //Navbar to navigate in outlet.
-        <header>
-            <img src="" alt="AmiiboAPI Logo"/>
-            <nav>
-                <NavLink to="/">Inicio</NavLink>
-                <NavLink to="/figuras">Figuras</NavLink>
-                <NavLink to="/accesorios">Accesorios</NavLink>
-                <NavLink to="/contacto">Contacto</NavLink>
+        <header className="header">
+            <img className="header__logo" src="/src/assets/img/LogoLight.svg" alt="AmiiboAPI Logo"/>
+            <nav className="header__nav">
+                <NavLink className="nav__link" to="/">Inicio</NavLink>
+                <NavLink className="nav__link" to="/figuras">Figuras</NavLink>
+                <NavLink className="nav__link" to="/accesorios">Accesorios</NavLink>
+                <NavLink className="nav__link" to="/contacto">Contacto</NavLink>
             </nav>
-            <button>Acceso</button>
+            <button className="header_button">Acceso</button>
         </header>
     )
 }

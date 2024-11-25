@@ -1,84 +1,86 @@
-import ValidateFormsHook from "../hooks/ValidateFormsHook.jsx";
-import {useState} from "react";
+import {Formik} from "formik";
+import * as Yup from "yup"
+
+const regexMail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$/ //Regex For email
 
 const Contact = () => {
 
-    const [email, setEmail] = useState("")
-    const [request, setRequest] = useState("")
-    const [errorEmail, setErrorEmail] = useState(null)
-    const [errorRequest, setErrorRequest] = useState(null)
-
-    const handleSubmit = e => {
-        e.preventDefault()
-        console.log("Mensaje de contacto enviado") //In DIW, create a toast for send message
-
-        //Reset useState values
-        setEmail("")
-        setRequest("")
-        setErrorEmail(null)
-        setErrorRequest(null)
+    //Submit values
+    const onSubmit = ({email, request}, {setSubmitting, resetForm}) => {
+        console.log("Mensaje Enviado Correctamente")
+        setSubmitting(false)
+        resetForm()
     }
 
-    const handleBlur = e => {
-        const {value , name} = e.target //Destructuring event.target
-        if (name === "email") {
-            setErrorEmail(ValidateFormsHook(value, name)) //Values for show errors)
-            setEmail(value)
-        }
-        if (name === "request") {
-            setErrorRequest(ValidateFormsHook(value, name))
-            setRequest(value)
-        }
-    }
+    //Validation valuesf
+    const validationSchema =
+        Yup.object().shape(
+    {
+                email: Yup //Email Validation
+                        .string()
+                        .trim()
+                        .matches(regexMail,"Email no válido")
+                        .required("El campo email es requerido"),
 
-    //For control state of values in react
-    const handleChange = (e) => {
-        const { name, value } = e.target
-        if (name === "email") {
-            setEmail(value)
-        }
-        if (name === "request") {
-            setRequest(value)
-        }
-    }
-
-    const formValid = !(email && request && !errorEmail && !errorRequest) //Boolean for disable button
+                request: Yup //Request validation
+                        .string()
+                        .trim()
+                        .min(10, "Introduce una frase real")
+                        .required("El campo password es obligatorio")
+    })
 
     return (
         <>
-            <header className="">
+            <header>
                 <h1>Contacto</h1>
             </header>
             <section>
-                <form onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        name="email"
-                        placeholder="Introduce tu Correo"
-                        value={email}
-                        onBlur={handleBlur}
-                        onChange={handleChange}
-                    />
-                    { //If email is incorrect show error
-                        errorEmail !== null?
-                            (<p>{errorEmail}</p>): ''
-                    }
-                    <textarea
-                        name="request"
-                        placeholder="Comenta lo que necesitas"
-                        value={request}
-                        onBlur={handleBlur}
-                        onChange={handleChange}
-                    />
-                    { //If request is incorrect show error
-                        errorRequest !== null?
-                            (<p>{errorRequest}</p>):''
-                    }
-                    <button type="submit" disabled={formValid}>Enviar</button>
-                </form>
+                <Formik
+                    initialValues={{ email: "", request: ""}}
+                    onSubmit={onSubmit}
+                    validationSchema={validationSchema}
+                >
+                    {({
+                          values,
+                          handleChange,
+                          handleBlur,
+                          handleSubmit,
+                          errors,
+                          touched,
+                        isSubmitting
+                      }) => (
+                        <form onSubmit={handleSubmit}>
+                            <div>
+                                <input
+                                    type="text"
+                                    name="email"
+                                    placeholder="Introduce tu Correo"
+                                    value={values.email}
+                                    onBlur={handleBlur}
+                                    onChange={handleChange}
+                                />
+                                {errors.email && touched.email && (<p>{errors.email}</p>)}
+                            </div>
+
+                            <div>
+                                <textarea
+                                    name="request"
+                                    placeholder="Comenta lo que necesitas"
+                                    value={values.request}
+                                    onBlur={handleBlur}
+                                    onChange={handleChange}
+                                />
+                                {errors.request && touched.request && (<p>{errors.request}</p>)}
+                            </div>
+
+                            <button type="submit" disabled={isSubmitting}>Enviar</button>
+                        </form>
+                    )}
+                </Formik>
             </section>
             <footer></footer>
         </>
-    )
-}
-export default Contact
+    );
+};
+
+export default Contact;
