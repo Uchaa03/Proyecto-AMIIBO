@@ -22,7 +22,7 @@ export const login = ({email, password}) => {
     return signInWithEmailAndPassword(auth, email, password)
 }
 
-//Singup
+//Signup
 export const singup = ({email, password}) => {
     return createUserWithEmailAndPassword(auth, email, password)
 }

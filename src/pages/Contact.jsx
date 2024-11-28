@@ -1,7 +1,6 @@
 import {Formik} from "formik";
 import * as Yup from "yup"
-
-const regexMail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$/ //Regex For email
+import {emailValidation, requestValidation} from "../hooks/ValidateFormsHook.jsx";
 
 const Contact = () => {
 
@@ -12,21 +11,9 @@ const Contact = () => {
         resetForm()
     }
 
-    //Validation valuesf
-    const validationSchema =
-        Yup.object().shape(
-    {
-                email: Yup //Email Validation
-                        .string()
-                        .trim()
-                        .matches(regexMail,"Email no válido")
-                        .required("El campo email es requerido"),
-
-                request: Yup //Request validation
-                        .string()
-                        .trim()
-                        .min(10, "Introduce una frase real")
-                        .required("El campo password es obligatorio")
+    const validationSchema = Yup.object({
+        email: emailValidation,
+        request: requestValidation
     })
 
     return (

@@ -2,9 +2,13 @@ import {Formik} from "formik";
 import {NavLink} from "react-router-dom";
 import isLoggedHook from "../hooks/isLoggedHook.jsx";
 import {login} from "../config/Firebase.jsx";
-import * as Yup from "yup"
+import * as Yup from "yup";
+import {emailValidation, passwordValidation} from "../hooks/ValidateFormsHook.jsx";
 
-const regexMail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$/ //Regex For email
+const validationSchema = Yup.object({ //Object for customized hook
+    email: emailValidation,
+    password: passwordValidation
+})
 
 const Login = () => {
     isLoggedHook() //If user is logued, go to figures.
@@ -23,24 +27,6 @@ const Login = () => {
             setSubmitting(false)
         }
     }
-
-    //Validation for inputs
-    const validationSchema = Yup.object().shape({
-        email: Yup.string()
-                    .trim()
-                    .matches(regexMail, "El correo no es válido")
-                    .required("El correo es necesario"),
-        password: Yup.string() //.matches for a real password validation
-                        .trim()
-                        .min(8, "La contraseña debe tener al menos 8 caracteres")
-                        .max(20, "La contraseña no debe exceder los 20 caracteres")
-                        .matches(/[A-Z]/, "La contraseña debe incluir al menos una letra mayúscula")
-                        .matches(/[a-z]/, "La contraseña debe incluir al menos una letra minúscula")
-                        .matches(/[0-9]/, "La contraseña debe incluir al menos un número")
-                        .matches(/[!@#$%^&*]/, "La contraseña debe incluir al menos un carácter especial (!@#$%^&*)")
-                        .matches(/^\S*$/, "La contraseña no debe contener espacios")
-                        .required("La contraseña es necesaria")
-    })
 
     return (
         <Formik //Form login with Formik

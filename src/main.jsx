@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import {StrictMode, Suspense} from 'react'
 import { createRoot } from 'react-dom/client'
 import './assets/styles.css'
 import {RouterProvider} from "react-router-dom";
@@ -7,8 +7,10 @@ import UserProvider from "./context/userContext.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-      <UserProvider>
-          <RouterProvider router={Router}/>
-      </UserProvider>
+      <Suspense fallback={<div>Cargando....</div>}>
+          <UserProvider>
+              <RouterProvider router={Router}/>
+          </UserProvider>
+      </Suspense>
   </StrictMode>,
 )

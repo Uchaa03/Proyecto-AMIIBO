@@ -4,7 +4,6 @@ import {Outlet} from "react-router-dom";
 const LayoutPrivate = () => {
     return (
         <>
-            <Navbar/>
             <Outlet/>
         </>
     )

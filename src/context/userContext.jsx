@@ -11,9 +11,11 @@ const UserProvider = ({children}) => {
         onAuthStateChanged(auth, (user) => {
               if (user) { //If user is logued change state.
                   setUser(user)
+                  const uid = user.uid;
+                  console.log(uid)
               }
         })
-    }, [user]);
+    }, []);
 
     return (
         <UserContext.Provider value={{user, setUser}}>

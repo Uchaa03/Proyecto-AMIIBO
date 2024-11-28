@@ -1,17 +1,20 @@
+import {lazy} from "react";
 import {createBrowserRouter} from "react-router-dom";
-import LayoutRoot from "../layout/LayoutRoot.jsx";
 import Home from "../pages/Home.jsx";
-import Figures from "../pages/Figures.jsx";
-import Accesories from "../pages/Accesories.jsx";
-import Contact from "../pages/Contact.jsx";
-import LayoutPrivate from "../layout/LayoutPrivate.jsx";
-import Favorites from "../pages/Favorites.jsx";
-import LayoutModal from "../layout/LayoutModal.jsx";
-import Login from "../pages/Login.jsx";
-import Singup from "../pages/Singup.jsx";
 
 
-export const Router = createBrowserRouter([ //For create navar route
+// Lazy Load
+const LayoutRoot = lazy(() => import("../layout/LayoutRoot.jsx"));
+const Figures = lazy(() => import("../pages/Figures.jsx"));
+const Accesories = lazy(() => import("../pages/Accesories.jsx"));
+const Contact = lazy(() => import("../pages/Contact.jsx"));
+const LayoutPrivate = lazy(() => import("../layout/LayoutPrivate.jsx"));
+const Favorites = lazy(() => import("../pages/Favorites.jsx"));
+const LayoutModal = lazy(() => import("../layout/LayoutModal.jsx"));
+const Login = lazy(() => import("../pages/Login.jsx"));
+const Singup = lazy(() => import("../pages/Signup.jsx"));
+
+export const Router = createBrowserRouter([ //For create navbar route
     {
         path: '/',
         element: <LayoutRoot/>,

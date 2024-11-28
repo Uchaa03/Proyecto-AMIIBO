@@ -1,19 +1,13 @@
 import {NavLink, useNavigate} from "react-router-dom";
+import {useContext} from "react";
+import {UserContext} from "../context/userContext.jsx";
+import NavbarLogged from "./NavbarLogged.jsx";
+import NavbarLogout from "./NavbarLogout.jsx";
 
 const Navbar = () => {
-    const navigate = useNavigate();
-
+    const {user} = useContext(UserContext)
     return ( //Navbar to navigate in outlet.
-        <header className="header">
-            <img className="header__logo" src="/src/assets/img/LogoLight.svg" alt="AmiiboAPI Logo"/>
-            <nav className="header__nav">
-                <NavLink className="nav__link" to="/">Inicio</NavLink>
-                <NavLink className="nav__link" to="/figuras">Figuras</NavLink>
-                <NavLink className="nav__link" to="/accesorios">Accesorios</NavLink>
-                <NavLink className="nav__link" to="/contacto">Contacto</NavLink>
-            </nav>
-            <button className="header_button" onClick={() => navigate("/iniciosesion")}>Acceso</button>
-        </header>
+        user? <NavbarLogged/>:<NavbarLogout/>
     )
 }
 

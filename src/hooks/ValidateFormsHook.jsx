@@ -1,17 +1,41 @@
-//Regex for validations.
-const regexMail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$/ //Regex For email
+import * as Yup from "yup";
 
-//Hook For Validate inputs forms
-const ValidateFormsHook = (value, inputName) => {
-    if (value.trim() !== "") {
-        if (inputName === "email" && !regexMail.test(value)){ //Email Validation
-            return "Formato de correo no valido"
-        }
-        if (inputName === "request" && value.length < 10){ //Simple request validation
-            return "Introduce una petición real"
-        }
-        return null
-    }
-    return "El campo no puede estar vacío"
-}
-export default ValidateFormsHook
+//Email Regex
+const regexMail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$/
+
+export const emailValidation = Yup.string()
+    .trim()
+    .matches(regexMail, "El correo no es válido")
+    .required("El correo es necesario")
+
+export const passwordValidation = Yup.string()
+    .trim()
+    .min(8, "La contraseña debe tener al menos 8 caracteres")
+    .max(20, "La contraseña no debe exceder los 20 caracteres")
+    .matches(/[A-Z]/, "La contraseña debe incluir al menos una letra mayúscula")
+    .matches(/[a-z]/, "La contraseña debe incluir al menos una letra minúscula")
+    .matches(/[0-9]/, "La contraseña debe incluir al menos un número")
+    .matches(/[!@#$%^&*]/, "La contraseña debe incluir al menos un carácter especial (!@#$%^&*)")
+    .matches(/^\S*$/, "La contraseña no debe contener espacios")
+    .required("La contraseña es necesaria")
+
+export const usernameValidation = Yup.string()
+    .trim()
+    .min(6, "El usuario debe tener mínimo 6 caracteres")
+    .max(12, "El usuario debe tener mínimo 12 caracteres")
+    .required("El Nombre de Usuario es obligatorio")
+
+export const confirmpasswordValidation = Yup.string()
+    .trim()
+    .oneOf([Yup.ref("password"), null], "Las contraseñas deben coincidir")
+    .required("Confirmar la contraseña es necesario")
+
+export const favoritecharacterValidation = Yup.string()
+    .trim()
+    .required("Selecciona tu personaje favorito")
+
+export const requestValidation = Yup.string()
+    .trim()
+    .min(10, "Introduce una frase real")
+    .required("La petición es obligatoria")
+
