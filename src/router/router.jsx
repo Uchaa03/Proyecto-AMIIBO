@@ -4,15 +4,15 @@ import Home from "../pages/Home.jsx";
 
 
 // Lazy Load
-const LayoutRoot = lazy(() => import("../layout/LayoutRoot.jsx"));
-const Figures = lazy(() => import("../pages/Figures.jsx"));
-const Accesories = lazy(() => import("../pages/Accesories.jsx"));
-const Contact = lazy(() => import("../pages/Contact.jsx"));
-const LayoutPrivate = lazy(() => import("../layout/LayoutPrivate.jsx"));
-const Favorites = lazy(() => import("../pages/Favorites.jsx"));
-const LayoutModal = lazy(() => import("../layout/LayoutModal.jsx"));
-const Login = lazy(() => import("../pages/Login.jsx"));
-const Singup = lazy(() => import("../pages/Signup.jsx"));
+const LayoutRoot = lazy(() => import("../layout/LayoutRoot.jsx"))
+const Figures = lazy(() => import("../pages/Figures.jsx"))
+const Accesories = lazy(() => import("../pages/Accesories.jsx"))
+const Contact = lazy(() => import("../pages/Contact.jsx"))
+const LayoutPrivate = lazy(() => import("../layout/LayoutPrivate.jsx"))
+const Favorites = lazy(() => import("../pages/Favorites.jsx"))
+const LayoutModal = lazy(() => import("../layout/LayoutModal.jsx"))
+const Login = lazy(() => import("../pages/Login.jsx"))
+const Singup = lazy(() => import("../pages/Signup.jsx"))
 
 export const Router = createBrowserRouter([ //For create navbar route
     {
