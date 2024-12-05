@@ -1,6 +1,6 @@
 import {StrictMode, Suspense} from 'react'
 import { createRoot } from 'react-dom/client'
-import './assets/styles.css'
+import './assets/sass/styles.css'
 import {RouterProvider} from "react-router-dom";
 import {Router} from "./router/router.jsx";
 import UserProvider from "./context/userContext.jsx";

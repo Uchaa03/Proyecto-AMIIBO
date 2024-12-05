@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
-import { UserContext } from "../context/userContext.jsx";
-import { Navigate } from "react-router-dom";
+import { useContext } from 'react'
+import { UserContext } from "../context/userContext.jsx"
+import { Navigate } from "react-router-dom"
 
 const Favorites = () => {
     const { user } = useContext(UserContext)

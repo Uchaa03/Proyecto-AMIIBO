@@ -18,26 +18,28 @@ const Contact = () => {
 
     return (
         <>
-            <header>
-                <h1>Contacto</h1>
-            </header>
-            <section>
-                <Formik
-                    initialValues={{ email: "", request: ""}}
-                    onSubmit={onSubmit}
-                    validationSchema={validationSchema}
-                >
-                    {({
-                          values,
-                          handleChange,
-                          handleBlur,
-                          handleSubmit,
-                          errors,
-                          touched,
-                        isSubmitting
-                      }) => (
-                        <form onSubmit={handleSubmit}>
-                            <div>
+            <main>
+                <section className="main__modal">
+                    <img className="modal__img" src="" alt="Imagen de Contacto"/>
+                    <header className="modal__header">
+                        <h1 className="header__title">Contacto</h1>
+                    </header>
+                    <Formik
+                        className="modal__form"
+                        initialValues={{email: "", request: ""}}
+                        onSubmit={onSubmit}
+                        validationSchema={validationSchema}
+                    >
+                        {({
+                              values,
+                              handleChange,
+                              handleBlur,
+                              handleSubmit,
+                              errors,
+                              touched,
+                              isSubmitting
+                        }) => (
+                            <form onSubmit={handleSubmit}>
                                 <input
                                     type="text"
                                     name="email"
@@ -47,9 +49,7 @@ const Contact = () => {
                                     onChange={handleChange}
                                 />
                                 {errors.email && touched.email && (<p>{errors.email}</p>)}
-                            </div>
 
-                            <div>
                                 <textarea
                                     name="request"
                                     placeholder="Comenta lo que necesitas"
@@ -58,14 +58,12 @@ const Contact = () => {
                                     onChange={handleChange}
                                 />
                                 {errors.request && touched.request && (<p>{errors.request}</p>)}
-                            </div>
-
-                            <button type="submit" disabled={isSubmitting}>Enviar</button>
-                        </form>
-                    )}
-                </Formik>
-            </section>
-            <footer></footer>
+                                <button type="submit" disabled={isSubmitting}>Enviar</button>
+                            </form>
+                        )}
+                    </Formik>
+                </section>
+            </main>
         </>
     );
 };

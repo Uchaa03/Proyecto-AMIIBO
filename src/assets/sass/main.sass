@@ -1,16 +1,20 @@
 // Base Styles
-@import "base/reset"
-@import "base/typo"
-
-// Structure of the app
-@import "layout/footer"
-@import "layout/navbar"
+@use "base/reset"
+@use "base/typo"
 
 // Utilities
-@import "utilities/variables"
-@import "utilities/mixins"
-@import "utilities/functions"
+@use "utilities/variables"
+@use "utilities/mixins"
+@use "utilities/functions"
+
+
+// Structure of the app
+@use "layout/footer"
+@use "layout/navbar"
+
+// Components
+@use "components/cards"
+@use "components/modal"
 
 // Specific styles/pages
-@import "views/home"
-
+@use "views/home"
