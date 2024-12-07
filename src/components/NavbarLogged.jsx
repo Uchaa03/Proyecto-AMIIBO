@@ -30,7 +30,7 @@ const NavbarLogged = () => {
                         <NavLink className="option__link" to="/contacto">Contacto</NavLink>
                     </li>
                     <li className="menu__option">
-                        <NavLink className="nav__link" to="/favoritos">Favoritos</NavLink>
+                        <NavLink className="option__link" to="/favoritos">Favoritos</NavLink>
                     </li>
                 </ul>
             </nav>

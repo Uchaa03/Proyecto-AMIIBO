@@ -11,13 +11,15 @@ import {
 } from "../hooks/ValidateFormsHook.jsx";
 import ModalForms from "../components/ModalForms.jsx";
 import React from "react";
+import {addUser} from "../config/DexieDB.jsx";
 
 const Signup = () => {
     isLoggedHook() //If user is registred, go to figures.
-    const onSubmit = async ({email, password}, {setSubmitting, setErrors, resetForm}) =>{
+    const onSubmit = async ({username, email, password, favoritecharacter}, {setSubmitting, setErrors, resetForm}) =>{
         try {
-            console.log("inciando sesion")
-            await singup({email,password}) //Function to login with firebase
+            const userSigned = await singup({email,password}) //Function to log in with firebase
+            const uid = userSigned.user.uid //Get uid user signed
+            await addUser({uid, username, email, favoritecharacter})
             resetForm()
         }catch (error) {
             console.log(error.code)
@@ -28,10 +30,12 @@ const Signup = () => {
             console.log(error.code)
             console.log(error.message)
         }finally {
-            console.log("finalizao")
             setSubmitting(false)
         }
+
     }
+
+
 
     const validationSchema = Yup.object({
         username: usernameValidation,
