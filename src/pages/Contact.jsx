@@ -20,7 +20,7 @@ const Contact = () => {
 
     return (
         <ModalForms>
-            <img className="modal__img" src="/src/assets/img/ZeldaContact.png" alt="Imagen de Contacto"/>
+            <img className="modal__img" src="../assets/img/ZeldaContact.png" alt="Imagen de Contacto"/>
             <article className="modal__form">
                 <header className="form__header">
                     <h1 className="header__title">Contacto</h1>
