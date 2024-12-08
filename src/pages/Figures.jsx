@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { searchFilterGames, searchFilterSeries } from "../hooks/filtersHook.jsx";
+import AmiiboCards from "../components/AmiiboCards.jsx";
 
 const Figures = () => {
     const [amiibos, setAmiibos] = useState([]) // Array of figures
@@ -103,16 +104,7 @@ const Figures = () => {
                     onChange={(e) => setSearchName(e.target.value)}
                 />
             </section>
-
-            <section>
-                {currentAmiibos.map((amiibo, index) => (
-                    <article key={index}>
-                        <img src={amiibo.image} alt={amiibo.name} />
-                        <h2>{amiibo.name}</h2>
-                    </article>
-                ))}
-            </section>
-
+            <AmiiboCards children={currentAmiibos}></AmiiboCards>
             <section>
                 <button onClick={prevPage} disabled={currentPage === 1}>Anterior</button>
                 <button onClick={nextPage} disabled={currentPage === totalPages}>Siguiente</button>
