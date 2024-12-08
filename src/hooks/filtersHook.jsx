@@ -15,3 +15,12 @@ export function searchFilterGames(amiibos) {
             return unique
         }, [])
 }
+
+//Funtion for extract gameSeries to filter amiibos
+export function searchFilterType(amiibos) {
+    return amiibos.map(amiibo => amiibo.type)
+        .reduce((unique, item) => {
+            if (!unique.includes(item)) unique.push(item) //For add gameSeries unique values
+            return unique
+        }, [])
+}

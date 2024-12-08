@@ -1,8 +1,15 @@
 import React from 'react'
-import AddFavoriteHook from "../hooks/AddFavoriteHook.jsx";
+import {addFavoriteHook} from "../hooks/addFavoriteHook.jsx";
+import {useUserUid} from "../hooks/useUserUid.jsx";
 
 const ModalCards = ({amiibo, closeModal}) => {
+    const actualUser = useUserUid();
+
     if (!amiibo) return null //If not any amiibo return null for show anything
+
+    const handleAddFavorite = () => {
+        addFavoriteHook(amiibo, actualUser.uid)
+    }
 
     return (
         <section className="figures__modal">
@@ -30,7 +37,7 @@ const ModalCards = ({amiibo, closeModal}) => {
                     </button>
                     <button
                         className="modal__favorite-button"
-                        onClick={() => AddFavoriteHook(amiibo)}
+                        onClick={() => handleAddFavorite()}
                     >
                         Agregar a Favoritos
                     </button>

@@ -70,7 +70,7 @@ src
 │   ├── userContext.jsx
 ├── hooks
 │   ├── isLoggedHook.jsx
-│   ├── ValidateFormsHook.jsx
+│   ├── validateFormsHook.jsx
 ├── layout
 │   ├── LayoutModal.jsx
 │   ├── LayoutPrivate.jsx
@@ -79,7 +79,7 @@ src
 │   ├── Accesories.jsx
 │   ├── Contact.jsx
 │   ├── Favorites.jsx
-│   ├── Figures.jsx
+│   ├── Accesories.jsx
 │   ├── Home.jsx
 │   ├── Login.jsx
 │   ├── Signup.jsx
@@ -109,7 +109,7 @@ Contexto del Usuario [userContext.jsx](./src/context/userContext.jsx) para cambi
 Compruba si estás logueado para la redirección a la hora de loguear [isLoggedHook.jsx](./src/hooks/isLoggedHook.jsx)
 
 Para la validación en los formularios reutilizando las variables en los diferentes formularios para una mayor 
-refactorización y reutilización del código [ValidateFormsHook.jsx](./src/hooks/ValidateFormsHook.jsx)
+refactorización y reutilización del código [validateFormsHook.jsx](./src/hooks/validateFormsHook.jsx)
 
 ### Layaouts
 Los diferentes layouts para la gestión de las rutas predeterminadas, privadas, y de loguin/registro
@@ -121,7 +121,7 @@ Los diferentes layouts para la gestión de las rutas predeterminadas, privadas, 
 - [Accesories.jsx](./src/pages/Accesories.jsx) ➡️ Página similar a la de figuras _(No implementada aún)_
 - [Contact.jsx](./src/pages/Contact.jsx) ➡️ Página contacto con validación de `formik`
 - [Favorites.jsx](./src/pages/Favorites.jsx) ➡️ Donde se almacenaran las figuras, cartas y peluches favoritos.
-- [Figures.jsx](./src/pages/Figures.jsx) ➡️ Página con paginación básica de figuras de la API _(Faltan detalles)_
+- [Accesories.jsx](./src/pages/Figures.jsx) ➡️ Página con paginación básica de figuras de la API _(Faltan detalles)_
 - [Home.jsx](./src/pages/Home.jsx) ➡️ Pagina inicial _(No implementada)._
 - [Login.jsx](./src/pages/Login.jsx) ➡️ Inicio de sesión validado usando `formik`.
 - [Signup.jsx](./src/pages/Signup.jsx) ➡️ Registro de la página con validación de formularios usando `formik`.

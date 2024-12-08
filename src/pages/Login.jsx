@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 import isLoggedHook from "../hooks/isLoggedHook.jsx";
 import {login} from "../config/Firebase.jsx";
 import * as Yup from "yup";
-import {emailValidation, passwordValidation} from "../hooks/ValidateFormsHook.jsx";
+import {emailValidation, passwordValidation} from "../hooks/validateFormsHook.jsx";
 import ModalForms from "../components/ModalForms.jsx";
 import React from "react";
 

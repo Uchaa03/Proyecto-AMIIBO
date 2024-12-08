@@ -8,7 +8,7 @@ import {
     emailValidation, favoritecharacterValidation,
     passwordValidation,
     usernameValidation
-} from "../hooks/ValidateFormsHook.jsx";
+} from "../hooks/validateFormsHook.jsx";
 import ModalForms from "../components/ModalForms.jsx";
 import React from "react";
 import {addUser} from "../config/DexieDB.jsx";
@@ -34,8 +34,6 @@ const Signup = () => {
         }
 
     }
-
-
 
     const validationSchema = Yup.object({
         username: usernameValidation,

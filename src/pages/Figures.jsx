@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { searchFilterGames, searchFilterSeries } from "../hooks/filtersHook.jsx";
 import Cards from "../components/Cards.jsx";
-import PaginationHook from "../hooks/PaginationHook.jsx";
+import PaginationHook from "../hooks/paginationHook.jsx";
 
 const Figures = () => {
     const [amiibos, setAmiibos] = useState([]) // Array of figures
@@ -16,7 +16,7 @@ const Figures = () => {
         const fetchAmiibos = async () => {
             try {
                 // API CALL For extract amiibos
-                const response = await fetch('https://www.amiiboapi.com/api/amiibo/?type=figure') // Only Figures
+                const response = await fetch('https://www.amiiboapi.com/api/amiibo/?type=figure') // Only Accesories
                 const data = await response.json()
                 setAmiibos(data.amiibo) // Store figures in array
             } catch (error) {

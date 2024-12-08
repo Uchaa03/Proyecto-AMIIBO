@@ -1,6 +1,6 @@
 import {Formik} from "formik"
 import * as Yup from "yup"
-import {emailValidation, requestValidation} from "../hooks/ValidateFormsHook.jsx"
+import {emailValidation, requestValidation} from "../hooks/validateFormsHook.jsx"
 import ModalForms from "../components/ModalForms.jsx"
 import React from "react"
 
