@@ -135,12 +135,12 @@ Donde renderizamos todas las rutas con **lazyload** y utilizamos los **layouts**
 Donde renderizamos todo el contenido completo de la aplciación [main.jsx](./src/main.jsx)
 
 ## Paginación principal de Figuras
-![""](./src/assets/img/Capt1.png)
+![""](public/img/Capt1.png)
 Como podemos observar se muestra la obtención de las figuras de **8 en 8**, _todavía sin estilos_ de ahi su mala estructuración
 hacemos la llamada **solamente a las figuras**, las almacenamos en un `Array` y ya las vamos mostrando de manera **paginada**,
 jugando con el índice del array y unos botones que nos desplazan con `.slice` entre los elementos.
-![""](./src/assets/img/Capt2.png)
-![""](./src/assets/img/Capt3.png)
+![""](public/img/Capt2.png)
+![""](public/img/Capt3.png)
 Como se aprecia en estas dos imágenes vemos la implementación de los **botones básicos de paginación**, y que podemos cambiar
 de página y se muestran diferentes contenidos.
 

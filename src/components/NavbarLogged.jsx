@@ -17,7 +17,7 @@ const NavbarLogged = () => {
 
     return (
         <header className="header">
-            <img className="header__logo" src="../assets/img/LogoLight.svg" alt="AmiiboAPI Logo"/>
+            <img className="header__logo" src="/img/LogoLight.svg" alt="AmiiboAPI Logo"/>
             <nav className="header__nav">
                 <ul className="nav__menu">
                     <li className="menu__option">
@@ -35,7 +35,7 @@ const NavbarLogged = () => {
                 </ul>
             </nav>
             <button className="header__button" onClick={handleLogout}>
-                <img className="button__img" src="../assets/img/IconoLoginLight.svg" alt="Login"/>
+                <img className="button__img" src="/img/IconoLoginLight.svg" alt="Login"/>
                 Cerrar Sesión
             </button>
         </header>

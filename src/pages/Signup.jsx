@@ -45,7 +45,7 @@ const Signup = () => {
 
     return (
         <ModalForms>
-            <img className="modal__img" src="../assets/img/BrowserSingup.png" alt="Imagen de Contacto"/>
+            <img className="modal__img" src="/img/BrowserSingup.png" alt="Imagen de Contacto"/>
             <article className="modal__form">
                 <header className="form__header">
                     <h1 className="header__title">Contacto</h1>
