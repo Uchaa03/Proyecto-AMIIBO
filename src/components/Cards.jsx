@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import AmiiboModal from "./AmiiboModal.jsx";
+import ModalCards from "./ModalCards.jsx";
 
-const AmiiboCards = ({children}) => {
+const Cards = ({children}) => {
     const [selectedAmiibo, setSelectedAmiibo] = useState(null) //For select amiibo
     const [modal, setModal] = useState(false) //For show modal
 
@@ -31,8 +31,8 @@ const AmiiboCards = ({children}) => {
                     </button>
                 </article>
             ))}
-            {modal && <AmiiboModal amiibo={selectedAmiibo} closeModal={closeModal} />}
+            {modal && <ModalCards amiibo={selectedAmiibo} closeModal={closeModal} />}
         </section>
     )
 }
-export default AmiiboCards
+export default Cards
