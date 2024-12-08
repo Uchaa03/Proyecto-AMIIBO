@@ -69,8 +69,8 @@ const Figures = () => {
     }
 
     return (
-        <main>
-            <section>
+        <main className="main__figures">
+            <section className="figures__filters">
                 <select
                     id="amiibosSeries"
                     value={selectedSerie}
@@ -105,7 +105,7 @@ const Figures = () => {
                 />
             </section>
             <AmiiboCards children={currentAmiibos}></AmiiboCards>
-            <section>
+            <section className="figures__pagination">
                 <button onClick={prevPage} disabled={currentPage === 1}>Anterior</button>
                 <button onClick={nextPage} disabled={currentPage === totalPages}>Siguiente</button>
             </section>
