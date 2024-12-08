@@ -135,7 +135,7 @@ Para la validación en los formularios reutilizando las variables en los diferen
 refactorización y reutilización del código [validateFormsHook.jsx](./src/hooks/validateFormsHook.jsx)
 
 ### Layaouts
-Los diferentes layouts para la gestión de las rutas predeterminadas, privadas, y de loguin/registro
+Los diferentes layouts para la gestión de las rutas predeterminadas, privadas, y de login/registro
 - [LayoutModal.jsx](./src/layout/LayoutModal.jsx)
 - [LayoutPrivate.jsx](./src/layout/LayoutPrivate.jsx)
 - [LayoutRoot.jsx](./src/layout/LayoutRoot.jsx)
@@ -145,9 +145,9 @@ Los diferentes layouts para la gestión de las rutas predeterminadas, privadas, 
 - [Contact.jsx](./src/pages/Contact.jsx) ➡️ Página contacto con validación de `formik`
 - [Favorites.jsx](./src/pages/Favorites.jsx) ➡️ Donde se almacenaran las figuras, cartas y peluches favoritos.
 - [Figures.jsx](./src/pages/Figures.jsx) ➡️ Página con paginación básica de figuras de la API, en el que tenemos un 
-grid que muestra con la paginación los diferentes elementos, y con un boton con el que accedemos a un modal con el que 
+grid que muestra con la paginación los diferentes elementos, y con un botón con el que accedemos a un modal con el que 
 podemos agregar a favoritos elementos _(favoritos en desarrollo)_
-- [Home.jsx](./src/pages/Home.jsx) ➡️ Página inicial _(En desarrollo es solo estetica no afecta a la funcionalidad de la página)._
+- [Home.jsx](./src/pages/Home.jsx) ➡️ Página inicial _(En desarrollo es solo estética no afecta a la funcionalidad de la página)._
 - [Login.jsx](./src/pages/Login.jsx) ➡️ Inicio de sesión validado usando `formik`.
 - [Signup.jsx](./src/pages/Signup.jsx) ➡️ Registro de la página con validación de formularios usando `formik`.
 
@@ -157,7 +157,7 @@ podemos agregar a favoritos elementos _(favoritos en desarrollo)_
 Donde renderizamos todas las rutas con **lazyload** y utilizamos los **layouts** [router.jsx](./src/router/router.jsx)
 
 ### Renderizado del contenido completo
-Donde renderizamos todo el contenido completo de la aplciación [main.jsx](./src/main.jsx)
+Donde renderizamos todo el contenido completo de la aplicación [main.jsx](./src/main.jsx)
 
 ## Paginación principal de Figuras
 ![""](public/img/Capt1.png)
@@ -172,15 +172,17 @@ de página y se muestran diferentes contenidos.
 En resumen se realiza la llamada asíncrona que carga cuando los elementos han cargado, y se va mostrando de manera
 página de 8 en 8.
 
-## Despligue de la aplicación 
-Yo para desplegar mi aplicación y que funcione correctamente he utilizado **[Nelify](https://www.netlify.com/)**.
+## Despliegue de la aplicación 
+Yo para desplegar mi aplicación y que funcione correctamente he utilizado **[Netlify](https://www.netlify.com/)**.
 
-En el que enlace este repo de github y desplegue desde el terminal de nelify, así podemos actualizar el repo y el 
-despligue se actualiza automáticamente.
+En el que enlace este repo de github y despliegue desde el terminal de Netlify, así podemos actualizar el repo y el 
+despliegue se actualiza automáticamente.
 
-Importante también configurar desde la app las variables de entorno para que funcionen, como me hacía falta a mi 
-en este caso para **firbase**
+Importante también configurar desde la app las variables de entorno para que funcionen, como me hacía falta a mí 
+en este caso para **Firebase**
 ![""](public/img/Nelify.png)
+
+### [Video Explicativo del Proyecto](https://youtube.com/watch?v=vtm5HJ3STD8&feature=shared)
 
 ## Conclusión
 El proyecto es un proyecto muy divertido y también complejo, por una parte, estoy satisfecho debido a que a nivel de 
