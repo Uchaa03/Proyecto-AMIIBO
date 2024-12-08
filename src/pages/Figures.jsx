@@ -76,7 +76,7 @@ const Figures = () => {
                     value={selectedSerie}
                     onChange={(e) => setSelectedSerie(e.target.value)}
                 >
-                    <option value="" disabled selected>Serie del Amiibo</option>
+                    <option value="" selected>Selecciona una Serie</option>
                     {filterSeries.map((amiiboSeries, index) => (
                         <option key={index} value={amiiboSeries}>
                             {amiiboSeries}
@@ -89,7 +89,7 @@ const Figures = () => {
                     value={selectedGame}
                     onChange={(e) => setSelectedGame(e.target.value)}
                 >
-                    <option value="" disabled selected>Juego de la Serie</option>
+                    <option value="" selected>Selecciona un Juego</option>
                     {filterGames.map((gameSeries, index) => (
                         <option key={index} value={gameSeries}>
                             {gameSeries}
