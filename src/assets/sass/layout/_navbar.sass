@@ -33,10 +33,12 @@
   color: $dark
   transition: 0.3s ease
 
-.header__button
-  width: 10rem
+
+.header__button-logged
+  width: 15rem
   height: 2.5rem
   display: flex
+  align-content: space-around
   border-radius: 0.8rem
   border: 0.2rem solid $dark
   font-size: 1.2rem
@@ -44,5 +46,24 @@
   font-weight: 600
   color: #323A38
 
+.header__button-logout
+  width: 10rem
+  height: 2.5rem
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  border-radius: 0.8rem
+  border: 0.2rem solid $dark
+  font-size: 1.2rem
+  font-family: 'Baloo 2', sans-serif
+  font-weight: 600
+  color: #323A38
+  gap: 0.5rem
+  padding-left: 0.5rem
+  padding-right: 0.5rem
 .button__img
-  width: 40%
+  width: 1.3rem
+  margin: 0 /* Asegúrate de que no haya márgenes */
+  padding: 0 /* Asegúrate de que no haya relleno */
+  display: block

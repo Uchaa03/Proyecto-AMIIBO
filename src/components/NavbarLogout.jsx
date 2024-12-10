@@ -22,7 +22,7 @@ const NavbarLogout = () => {
                     </li>
                 </ul>
             </nav>
-            <button className="header__button" onClick={() => navigate("/iniciosesion")}>
+            <button className="header__button-logout" onClick={() => navigate("/iniciosesion")}>
                 <img className="button__img" src="/img/IconoLoginLight.svg" alt="Login"/>
                 Acceso
             </button>

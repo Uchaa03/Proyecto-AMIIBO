@@ -34,7 +34,7 @@ const NavbarLogged = () => {
                     </li>
                 </ul>
             </nav>
-            <button className="header__button" onClick={handleLogout}>
+            <button className="header__button-logged" onClick={handleLogout}>
                 <img className="button__img" src="/img/IconoLoginLight.svg" alt="Login"/>
                 Cerrar Sesión
             </button>
