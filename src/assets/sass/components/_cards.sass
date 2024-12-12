@@ -1,8 +1,8 @@
 @use '../utilities/variables' as *
 
 //Variables
-$card-width: 12rem
-$card-height: 25rem
+$card-width: 15rem
+$card-height: 22rem
 $card-gap: 1rem
 $overlay-bg: rgba(0, 0, 0, 0.4)
 $btn-bg: #fff
@@ -13,52 +13,52 @@ $btn-hover-bg: #f0f0f0
   grid-template-columns: repeat(4, 1fr) //Four same colums
   gap: $card-gap
   width: 100%
+  justify-content: space-between
   justify-items: center
   margin-top: 2rem
+  margin-bottom: 4rem
+
 
 .cards__card
-  position: relative
   width: $card-width
   height: $card-height
-  overflow: hidden
-  border-radius: 0.5rem
   display: flex
   flex-direction: column
-  justify-content: space-between
-
-.card__img
-  width: 100%
-  height: 100%
+  justify-content: flex-start
+  position: relative
+  transition: 300ms ease
+  border: $dark solid 0.4rem
+  border-radius: 1rem
   padding: 0.5rem
-  object-fit: contain
 
-.card__button
-  width: 100%
-  padding: 0.5rem 1rem
-  background-color: $primary
-  border: none
-  border-radius: 0.25rem
-  font-size: 1rem
-  color: $dark
-  opacity: 0.8
-  transition: transform 0.3s ease
+  .card__img
+    width: 100%
+    height: 80%
+    padding: 0.5rem
+    object-fit: contain
+    background-color: $primary
+    border-radius: 1rem
 
-.card__button--secondary
-  width: 100%
-  padding: 0.5rem 1rem
-  background-color: $secondary
-  border: none
-  border-radius: 0.25rem
-  font-size: 1rem
-  color: $dark
-  opacity: 0.8
-  transition: transform 0.3s ease
+  .card__name
+    position: absolute
+    margin-top: 15rem
 
-.card__button:hover
-  opacity: 1
+  .card__button
+    display: none
 
-
-.card__button--secondary:hover
-  opacity: 1
-
+.cards__card:hover
+  width: $card-width+1
+  height: $card-height+1
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  position: relative
+  transition: 300ms ease
+  .card__button
+    display: block
+    width: 100%
+    position: absolute
+    background-color: $primary
+    opacity: 0.8
+    margin-top: 17rem
 
