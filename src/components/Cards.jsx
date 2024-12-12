@@ -20,14 +20,13 @@ const Cards = ({children}) => {
             {children.map((amiibo, index) => (
                 <article key={index} className="cards__card">
                     <img className="card__img" src={amiibo.image} alt={amiibo.name}/>
-                    <h2 className="card__name">{amiibo.name}</h2>
+                    {/*For show three first words only*/}
+                    <h2 className="card__name">{amiibo.name.split(" ")[0]}</h2>
                     <button
-                        className={index % 2 !== 0?
-                            "card__button--secondary":
-                            "card__button"}
+                        className="card__button"
                         onClick={() => showModal(amiibo)} //Send amiibo to modal
                     >
-                        Ver más
+                        INFO
                     </button>
                 </article>
             ))}

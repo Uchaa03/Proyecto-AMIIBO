@@ -1,23 +1,11 @@
 @use '../utilities/variables' as *
 
-//Variables
-$card-width: 15rem
-$card-height: 22rem
-$card-gap: 1rem
-$overlay-bg: rgba(0, 0, 0, 0.4)
-$btn-bg: #fff
-$btn-hover-bg: #f0f0f0
-
 .figures__cards
   display: grid
   grid-template-columns: repeat(4, 1fr) //Four same colums
-  gap: $card-gap
   width: 100%
-  justify-content: space-between
-  justify-items: center
-  margin-top: 2rem
-  margin-bottom: 4rem
-
+  padding: 2rem 10rem
+  gap: 2rem
 
 .cards__card
   width: $card-width
@@ -26,25 +14,49 @@ $btn-hover-bg: #f0f0f0
   flex-direction: column
   justify-content: flex-start
   position: relative
-  transition: 300ms ease
   border: $dark solid 0.4rem
   border-radius: 1rem
   padding: 0.5rem
+  background-color: $primary
+  transition: 300ms ease
+
 
   .card__img
     width: 100%
-    height: 80%
+    height: 90%
     padding: 0.5rem
     object-fit: contain
-    background-color: $primary
+    background-color: $primary150
     border-radius: 1rem
+    transition: 300ms ease
+
 
   .card__name
     position: absolute
-    margin-top: 15rem
+    margin-top: 16.5rem
+    font-size: 3rem
+    font-family: "Baloo 2", serif
+    color: $dark
+    text-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25)
+    transition: 0.5s ease
 
   .card__button
-    display: none
+    opacity: 0
+    visibility: hidden
+    position: absolute
+    right: 10px
+    bottom: 0
+    background: none
+    border: none
+    color: $neutral
+    transition: 500ms ease
+    font-size: 1.5rem
+    font-family: "Baloo 2", sans-serif
+    font-weight: 600
+    text-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25)
+    .button__img
+      width: 2rem
+
 
 .cards__card:hover
   width: $card-width+1
@@ -53,12 +65,30 @@ $btn-hover-bg: #f0f0f0
   flex-direction: column
   justify-content: flex-start
   position: relative
+  border: $dark solid 0.4rem
+  border-radius: 1rem
+  padding: 0.5rem
+  background-color: $primary
   transition: 300ms ease
+
+  .card__name
+    margin-top: 16.2rem
+
+  .card__img
+    opacity: 75%
+    transition: 300ms ease
+
   .card__button
-    display: block
-    width: 100%
-    position: absolute
-    background-color: $primary
-    opacity: 0.8
-    margin-top: 17rem
+    opacity: 1
+    visibility: visible
+    transition: 500ms ease
+
+
+//Overwrite Properties for change colors
+.cards__card:nth-child(even)
+  background-color: $secondary
+
+  .card__img
+    background-color: $secondary150
+
 
