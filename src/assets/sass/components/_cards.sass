@@ -3,9 +3,11 @@
 .figures__cards
   display: grid
   grid-template-columns: repeat(4, 1fr) //Four same colums
-  width: 100%
-  padding: 2rem 10rem
+  width: 85%
+  height: 55rem
+  padding: 2rem 0
   gap: 2rem
+  justify-items: center
 
 .cards__card
   width: $card-width
@@ -33,7 +35,7 @@
 
   .card__name
     position: absolute
-    margin-top: 16.5rem
+    margin-top: 18.5rem
     font-size: 3rem
     font-family: "Baloo 2", serif
     color: $dark
@@ -53,9 +55,8 @@
     font-size: 1.5rem
     font-family: "Baloo 2", sans-serif
     font-weight: 600
-    text-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25)
-    .button__img
-      width: 2rem
+    text-shadow: 1px 4px 4px rgba(0, 0, 0, 0.5)
+
 
 
 .cards__card:hover
@@ -70,9 +71,6 @@
   padding: 0.5rem
   background-color: $primary
   transition: 300ms ease
-
-  .card__name
-    margin-top: 16.2rem
 
   .card__img
     opacity: 75%

@@ -53,6 +53,7 @@ ul {
   align-items: center;
   padding: 1rem 1rem;
   background-color: #7EDBEC;
+  border-bottom: 0.3rem solid #323A38;
 }
 
 .header__logo {
@@ -127,14 +128,16 @@ ul {
 .figures__cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 100%;
-  padding: 2rem 10rem;
+  width: 85%;
+  height: 55rem;
+  padding: 2rem 0;
   gap: 2rem;
+  justify-items: center;
 }
 
 .cards__card {
-  width: 15rem;
-  height: 22rem;
+  width: 17rem;
+  height: 24rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -156,7 +159,7 @@ ul {
 }
 .cards__card .card__name {
   position: absolute;
-  margin-top: 16.5rem;
+  margin-top: 18.5rem;
   font-size: 3rem;
   font-family: "Baloo 2", serif;
   color: #323A38;
@@ -176,15 +179,12 @@ ul {
   font-size: 1.5rem;
   font-family: "Baloo 2", sans-serif;
   font-weight: 600;
-  text-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.cards__card .card__button .button__img {
-  width: 2rem;
+  text-shadow: 1px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 .cards__card:hover {
-  width: 16rem;
-  height: 23rem;
+  width: 18rem;
+  height: 25rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -194,9 +194,6 @@ ul {
   padding: 0.5rem;
   background-color: #7EDBEC;
   transition: 300ms ease;
-}
-.cards__card:hover .card__name {
-  margin-top: 16.2rem;
 }
 .cards__card:hover .card__img {
   opacity: 75%;
@@ -253,7 +250,7 @@ main {
 
 .modal__card {
   width: 60rem;
-  height: 30rem;
+  height: 32rem;
   display: flex;
   background-color: #7EDBEC;
   border: 0.5rem solid #323A38;
@@ -294,6 +291,7 @@ main {
 .main__figures {
   display: flex;
   flex-direction: column;
+  justify-items: center;
   width: 100%;
 }
 

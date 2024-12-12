@@ -16,7 +16,7 @@ const ModalCards = ({amiibo, closeModal}) => {
             <article className="modal__card">
                 <img className="card__img" src={amiibo.image} alt={amiibo.name}/>
                 <section className="card__article">
-                    <h1 className="card__title">{amiibo.name}</h1>
+                    <h1 className="card__title">{amiibo.name.split(" ").slice(0, 3).join(" ")}</h1>
                     <p className="card__text">
                         <span className="text__spam">Amiibo Serie: </span>
                         {amiibo.amiiboSeries}
